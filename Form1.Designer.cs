@@ -37,6 +37,9 @@
             label3 = new Label();
             button4 = new Button();
             button5 = new Button();
+            comboBox1 = new ComboBox();
+            listBox1 = new ListBox();
+            checkedListBox1 = new CheckedListBox();
             SuspendLayout();
             // 
             // button1
@@ -133,12 +136,42 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(1128, 125);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 9;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(1128, 165);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(240, 164);
+            listBox1.TabIndex = 10;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(1128, 341);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(240, 246);
+            checkedListBox1.TabIndex = 11;
+            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1140, 662);
+            ClientSize = new Size(1407, 662);
+            Controls.Add(checkedListBox1);
+            Controls.Add(listBox1);
+            Controls.Add(comboBox1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(label3);
@@ -150,6 +183,7 @@
             Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,5 +199,8 @@
         private Label label3;
         private Button button4;
         private Button button5;
+        private ComboBox comboBox1;
+        private ListBox listBox1;
+        private CheckedListBox checkedListBox1;
     }
 }

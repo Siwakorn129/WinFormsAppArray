@@ -80,13 +80,46 @@ namespace WinFormsAppArray
             int n = student.GetLength(1);
             for (int i = 0; i < m; i++)
             {
-                for (int j = 0;  j < n; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    ResultData += student[i, j] + "-";
+                    ResultData += student[i, j];
+                    if (j < n - 1)
+                    {
+                        ResultData += "-";
+                    }
                 }
                 ResultData += Environment.NewLine;
             }
             MessageBox.Show(ResultData, "แสดงข้อมูลใน array 2 มิติ");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string[] Fruits = { "ส้ม", "ทุเรียน", "มะกอก", "บักแงว", "หมากแมว" };
+            comboBox1.Items.AddRange(Fruits);
+            listBox1.Items.AddRange(Fruits);
+            checkedListBox1.Items.AddRange(Fruits);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = comboBox1.SelectedIndex.ToString() + "-";
+            str += comboBox1.SelectedItem;
+            MessageBox.Show(str);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = listBox1.SelectedIndex.ToString() + "-";
+            str += listBox1.SelectedItem;
+            MessageBox.Show(str);
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = checkedListBox1.SelectedIndex.ToString() + "-";
+            str += checkedListBox1.SelectedItem;
+            MessageBox.Show(str);
         }
     }
 }
